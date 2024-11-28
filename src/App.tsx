@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { FaBars, FaTimes, FaFacebook, FaTwitter, FaInstagram, FaEnvelope, FaPhone } from "react-icons/fa";
+import product1 from "./assets/product1.png"
+import product2 from "./assets/product2.png"
+import product3 from "./assets/product3.png"
+
 
 const App = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -107,27 +111,27 @@ const App = () => {
         </div>
       </section>
 
-      {/* Products Section */}
-      <section className="py-16 bg-[#FFFFFF] px-4 sm:px-8" id="products">
+     {/* Products Section */}
+     <section className="py-16 bg-[#FFFFFF] px-4 sm:px-8" id="products">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#388E3C]">Our Products</h2>
           <p className="py-4 text-lg sm:text-xl">High-quality products for productivity and sustainability.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {[1, 2, 3].map((product) => (
+          {[product1, product2, product3].map((product, index) => (
             <div
-              key={product}
+              key={index}
               className="card bg-[#FFFFFF] shadow-lg border border-[#388E3C] rounded-xl hover:scale-105 transition-all"
             >
               <figure>
                 <img
-                  src={`https://via.placeholder.com/250?text=Product+${product}`}
-                  alt={`Product ${product}`}
+                  src={product}
+                  alt={`Product ${index + 1}`}
                   className="rounded-t-lg w-full h-56 sm:h-64 object-cover"
                 />
               </figure>
               <div className="card-body text-center p-8">
-                <h3 className="text-xl text-[#388E3C] font-semibold">Product {product}</h3>
+                <h3 className="text-xl text-[#388E3C] font-semibold">Product {index + 1}</h3>
                 <p className="mt-4 text-lg">Eco-friendly products for sustainable experiences.</p>
               </div>
             </div>

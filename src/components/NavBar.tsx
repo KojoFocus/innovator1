@@ -9,8 +9,15 @@ const NavBar = () => {
   return (
     <nav className="bg-white w-full py-4 fixed top-0 z-50 shadow">
       <div className="flex justify-between items-center px-4 md:px-8">
-        <a href="#" className="flex items-center space-x-2 text-primary text-2xl font-bold">
-          <img src={logo} alt="SME Brand logo" className="h-10 w-10 md:h-12 md:w-12 object-contain" />
+        <a
+          href="#"
+          className="flex items-center space-x-2 text-primary text-2xl font-bold"
+        >
+          <img
+            src={logo}
+            alt="SME Brand logo"
+            className="h-10 w-10 md:h-12 md:w-12 object-contain"
+          />
           <span>SME Brand</span>
         </a>
 
