@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { FaBars, FaTimes, FaFacebook, FaTwitter, FaInstagram, FaEnvelope, FaPhone } from "react-icons/fa";
-import product1 from "./assets/product1.png"
-import product2 from "./assets/product2.png"
-import product3 from "./assets/product3.png"
-
+import {
+  FaBars,
+  FaTimes,
+  // FaFacebook,
+  // FaTwitter,
+  // FaInstagram,
+  // FaEnvelope,
+  // FaPhone,
+} from "react-icons/fa";
+import snailProduct1 from "./assets/SnailProduct1.webp";
+import snailProduct2 from "./assets/SnailProduct2.png";
+import snailProduct3 from "./assets/SnailProduct3.webp";
 
 const App = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -11,21 +18,24 @@ const App = () => {
   const toggleMenu = () => setIsMenuVisible(!isMenuVisible);
 
   return (
-    <div className="bg-[#F7F7F7] text-[#3D3D3D] font-sans">
+    <div className="bg-[#F4F9F4] text-[#3E4B3A] font-sans">
       {/* Navbar */}
       <nav className="bg-[#FFFFFF] w-full py-4 fixed top-0 z-50 shadow-xl">
         <div className="flex justify-between items-center px-4 md:px-8">
-          <a href="#" className="flex items-center space-x-2 text-[#388E3C] text-2xl font-extrabold">
-            <span>Company Name</span>
+          <a
+            href="#"
+            className="flex items-center space-x-2 text-[#6B8E23] text-2xl font-extrabold"
+          >
+            <span>Jeffery Snail Hub</span>
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {["About", "Services", "Products", "Contact"].map((section) => (
+            {["About", "Products", "Vision", "Contact"].map((section) => (
               <a
                 key={section}
                 href={`#${section.toLowerCase()}`}
-                className="text-[#388E3C] text-lg hover:text-[#FFEB3B] transition-all"
+                className="text-[#6B8E23] text-lg hover:text-[#90EE90] transition-all"
               >
                 {section}
               </a>
@@ -33,18 +43,18 @@ const App = () => {
           </div>
 
           {/* Mobile Menu */}
-          <button onClick={toggleMenu} className="md:hidden text-[#388E3C]">
+          <button onClick={toggleMenu} className="md:hidden text-[#6B8E23]">
             {isMenuVisible ? <FaTimes /> : <FaBars />}
           </button>
         </div>
 
         {isMenuVisible && (
           <div className="md:hidden bg-[#FFFFFF] shadow-xl py-4">
-            {["About", "Services", "Products", "Contact"].map((section) => (
+            {["About", "Products", "Vision", "Contact"].map((section) => (
               <a
                 key={section}
                 href={`#${section.toLowerCase()}`}
-                className="block px-4 py-2 text-[#388E3C] hover:bg-[#FFEB3B] transition-all"
+                className="block px-4 py-2 text-[#6B8E23] hover:bg-[#90EE90] transition-all"
               >
                 {section}
               </a>
@@ -54,74 +64,74 @@ const App = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="hero min-h-screen bg-[#388E3C] text-white flex items-center px-4 sm:px-12">
+      <section className="hero min-h-screen bg-gradient-to-b from-[#6B8E23] to-[#556B2F] text-white flex items-center px-4 sm:px-12">
         <div className="text-center w-full">
-          <h1 className="text-4xl sm:text-5xl font-bold">Welcome to Company Name</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold">
+            Revolutionizing Animal Nutrition
+          </h1>
           <p className="py-6 text-lg sm:text-xl">
-            Empowering industries with innovative solutions for a sustainable future.
+            Eco-friendly organic snail shell supplements for optimal animal
+            health and performance.
           </p>
-          <button className="px-6 sm:px-8 py-3 sm:py-4 text-lg sm:text-xl font-semibold text-white bg-gradient-to-r from-[#2ECC71] to-[#27AE60] rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all">
-            Get Started
+          <button className="px-6 sm:px-8 py-3 sm:py-4 text-lg sm:text-xl font-semibold text-white bg-[#90EE90] rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all">
+            Learn More
           </button>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-16 bg-[#F0F4F1] px-4 sm:px-8" id="about">
+      <section className="py-16 bg-[#F0FFF0] px-4 sm:px-8" id="about">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#388E3C]">Who We Are</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#6B8E23]">
+            Who We Are
+          </h2>
           <p className="py-4 text-lg sm:text-xl">
-            We are dedicated to providing sustainable and innovative solutions that drive growth in various sectors.
+            Jeffery Snail Hub is dedicated to creating innovative, eco-friendly
+            solutions that improve animal health and performance sustainably.
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-8">
-          {[ 
-            { title: "Our Mission", content: "To promote sustainability and innovation in industries." },
-            { title: "Our Vision", content: "To be the leading provider of eco-friendly solutions across industries." },
+          {[
+            {
+              title: "Our Mission",
+              content:
+                "To provide innovative, effective, and sustainable organic snail shell supplements that enhance animal well-being.",
+            },
+            {
+              title: "Our Vision",
+              content:
+                "To revolutionize animal nutrition with eco-friendly solutions that impact industries globally.",
+            },
           ].map((card, index) => (
             <div
               key={index}
-              className="card bg-[#FFFFFF] shadow-lg border border-[#388E3C] rounded-xl p-8 max-w-xs w-full"
+              className="card bg-[#FFFFFF] shadow-lg border border-[#6B8E23] rounded-xl p-8 max-w-xs w-full"
             >
-              <h3 className="text-2xl text-[#388E3C] font-semibold">{card.title}</h3>
+              <h3 className="text-2xl text-[#6B8E23] font-semibold">
+                {card.title}
+              </h3>
               <p className="mt-4 text-lg">{card.content}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 bg-[#E8F5E9] px-4 sm:px-8" id="services">
+      {/* Products Section */}
+      <section className="py-16 bg-[#F9FFF9] px-4 sm:px-8" id="products">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#388E3C]">Our Services</h2>
-          <p className="py-4 text-lg sm:text-xl">Explore our innovative services designed to support your business.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#6B8E23]">
+            Our Products
+          </h2>
+          <p className="py-4 text-lg sm:text-xl">
+            Premium organic snail shell supplements tailored for the poultry
+            industry.
+          </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {["Consulting", "Industry Solutions", "Training"].map((service, index) => (
+          {[snailProduct1, snailProduct2, snailProduct3].map((product, index) => (
             <div
               key={index}
-              className="card bg-[#FFFFFF] shadow-lg border border-[#388E3C] rounded-xl hover:scale-105 transition-all"
-            >
-              <div className="card-body text-center p-8">
-                <h3 className="text-xl text-[#388E3C] font-semibold">{service}</h3>
-                <p className="mt-4 text-lg">Customized solutions to help you achieve your goals.</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-     {/* Products Section */}
-     <section className="py-16 bg-[#FFFFFF] px-4 sm:px-8" id="products">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#388E3C]">Our Products</h2>
-          <p className="py-4 text-lg sm:text-xl">High-quality products for productivity and sustainability.</p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {[product1, product2, product3].map((product, index) => (
-            <div
-              key={index}
-              className="card bg-[#FFFFFF] shadow-lg border border-[#388E3C] rounded-xl hover:scale-105 transition-all"
+              className="card bg-[#FFFFFF] shadow-lg border border-[#6B8E23] rounded-xl hover:scale-105 transition-all"
             >
               <figure>
                 <img
@@ -131,62 +141,49 @@ const App = () => {
                 />
               </figure>
               <div className="card-body text-center p-8">
-                <h3 className="text-xl text-[#388E3C] font-semibold">Product {index + 1}</h3>
-                <p className="mt-4 text-lg">Eco-friendly products for sustainable experiences.</p>
+                <h3 className="text-xl text-[#6B8E23] font-semibold">
+                  Snail Shell Product {index + 1}
+                </h3>
+                <p className="mt-4 text-lg">
+                  Eco-friendly and sustainable solutions for animal nutrition.
+                </p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 bg-[#F7F9F9] px-4 sm:px-8" id="contact">
+      {/* Vision Section */}
+      <section className="py-16 bg-[#E8FFE8] px-4 sm:px-8" id="vision">
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#2ECC71]">Contact Us</h2>
-          <p className="py-4 text-lg sm:text-xl text-[#145A32]">We’d love to hear from you. Get in touch with us today.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#6B8E23]">
+            Our Core Values
+          </h2>
+          <p className="py-4 text-lg sm:text-xl">
+            We prioritize integrity, innovation, integration, and customer
+            focus to drive growth and positive impact.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 bg-[#F4F9F4] px-4 sm:px-8" id="contact">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#6B8E23]">
+            Contact Us
+          </h2>
+          <p className="py-4 text-lg sm:text-xl">
+            We'd love to hear from you! Reach out for collaborations or
+            inquiries.
+          </p>
         </div>
         <div className="flex justify-center">
           <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8">
             <form>
-              <div className="mb-6">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-green-600 focus:border-green-600 transition duration-150 bg-white"
-                  placeholder="Enter your full name"
-                  required
-                />
-              </div>
-              <div className="mb-6">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-green-600 focus:border-green-600 transition duration-150 bg-white"
-                  placeholder="Enter your email address"
-                  required
-                />
-              </div>
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-green-600 focus:border-green-600 transition duration-150 bg-white"
-                  placeholder="Type your message here"
-                  required
-                ></textarea>
-              </div>
+              {/* Form Inputs */}
               <button
                 type="submit"
-                className="w-full py-3 px-6 text-lg font-semibold text-white bg-gradient-to-r from-[#27AE60] to-[#2ECC71] rounded-lg hover:shadow-xl hover:scale-105 transition-all"
+                className="w-full py-3 px-6 text-lg font-semibold text-white bg-gradient-to-r from-[#6B8E23] to-[#8FBC8F] rounded-lg hover:shadow-xl hover:scale-105 transition-all"
               >
                 Send Message
               </button>
@@ -196,16 +193,9 @@ const App = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#388E3C] text-white py-6">
+      <footer className="bg-[#6B8E23] text-white py-6">
         <div className="text-center">
-          <p className="text-lg">© 2024 Company Name. All Rights Reserved.</p>
-          <div className="flex justify-center space-x-4 mt-4">
-            <a href="#" className="text-white hover:text-[#FFEB3B]"><FaFacebook size={24} /></a>
-            <a href="#" className="text-white hover:text-[#FFEB3B]"><FaTwitter size={24} /></a>
-            <a href="#" className="text-white hover:text-[#FFEB3B]"><FaInstagram size={24} /></a>
-            <a href="mailto:contact@company.com" className="text-white hover:text-[#FFEB3B]"><FaEnvelope size={24} /></a>
-            <a href="tel:+123456789" className="text-white hover:text-[#FFEB3B]"><FaPhone size={24} /></a>
-          </div>
+          <p>© 2024 Jeffery Snail Hub. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
