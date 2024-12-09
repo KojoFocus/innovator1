@@ -1,0 +1,32 @@
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import Navbar from "./components/Navbar";
+// import HeroSection from "./components/HeroSection";
+// import AboutSection from "./components/AboutSection";
+// import ProductsSection from "./components/ProductsSection";
+// import VisionSection from "./components/VisionSection";
+// import ContactSection from "./components/ContactSection";
+// import Footer from "./components/Footer";
+// import LearnMore from "./pages/LearnMore"; // New LearnMore page
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <div className="bg-[#F4F9F4] text-[#3E4B3A] font-sans">
+//         <Navbar />
+
+//         <Routes>
+//           <Route path="/" element={<HeroSection />} />
+//           <Route path="/learn-more" element={<LearnMore />} />
+//           <Route path="/contact" element={<ContactSection />} />
+//           <Route path="/about" element={<AboutSection />} />
+//           <Route path="/products" element={<ProductsSection />} />
+//           <Route path="/vision" element={<VisionSection />} />
+//         </Routes>
+
+//         <Footer />
+//       </div>
+//     </Router>
+//   );
+// };
+
+// export default App;

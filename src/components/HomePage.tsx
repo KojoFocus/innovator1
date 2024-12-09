@@ -1,0 +1,220 @@
+import { useState } from "react";
+import {
+  FaBars,
+  FaTimes,
+  // FaFacebook,
+  // FaTwitter,
+  // FaInstagram,
+  // FaEnvelope,
+  // FaPhone,
+} from "react-icons/fa";
+import snailProduct1 from "../assets/SnailProduct1.webp";
+import snailProduct2 from "../assets/SnailProduct2.png";
+import snailProduct3 from "../assets/SnailProduct3.webp";
+import { Link } from "react-router-dom";
+
+const HomePage = () => {
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+
+  const toggleMenu = () => setIsMenuVisible(!isMenuVisible);
+
+  return (
+    <div className="bg-[#F4F9F4] text-[#3E4B3A] font-sans">
+      {/* Navbar */}
+      <nav className="bg-[#FFFFFF] w-full py-4 fixed top-0 z-50 shadow-xl">
+        <div className="flex justify-between items-center px-4 md:px-8">
+          <a
+            href="#"
+            className="flex items-center space-x-2 text-[#6B8E23] text-2xl font-extrabold"
+          >
+            <span>Jeffery Snail Hub</span>
+          </a>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8">
+            {["About", "Products", "Vision", "Contact"].map((section) => (
+              <a
+                key={section}
+                href={`#${section.toLowerCase()}`}
+                className="text-[#6B8E23] text-lg hover:text-[#90EE90] transition-all"
+              >
+                {section}
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile Menu */}
+          <button onClick={toggleMenu} className="md:hidden text-[#6B8E23]">
+            {isMenuVisible ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+
+        {isMenuVisible && (
+          <div className="md:hidden bg-[#FFFFFF] shadow-xl py-4">
+            {["About", "Products", "Vision", "Contact"].map((section) => (
+              <a
+                key={section}
+                href={`#${section.toLowerCase()}`}
+                className="block px-4 py-2 text-[#6B8E23] hover:bg-[#90EE90] transition-all"
+              >
+                {section}
+              </a>
+            ))}
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section */}
+      <section className="hero min-h-screen bg-gradient-to-b from-[#6B8E23] to-[#556B2F] text-white flex items-center px-4 sm:px-12">
+        <div className="text-center w-full">
+          <h1 className="text-4xl sm:text-5xl font-bold">
+            Revolutionizing Animal Nutrition
+          </h1>
+          <p className="py-6 text-lg sm:text-xl">
+            Eco-friendly organic snail shell supplements for optimal animal
+            health and performance.
+          </p>
+          <Link to="/learn-more">
+            <button className="px-6 sm:px-8 py-3 sm:py-4 text-lg sm:text-xl font-semibold text-white bg-[#90EE90] rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all">
+              Learn More
+            </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 bg-[#F0FFF0] px-4 sm:px-8" id="about">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#6B8E23]">
+            Who We Are
+          </h2>
+          <p className="py-4 text-lg sm:text-xl">
+            Jeffery Snail Hub is dedicated to creating innovative, eco-friendly
+            solutions that improve animal health and performance sustainably.
+          </p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-8">
+          {[
+            {
+              title: "Our Mission",
+              content:
+                "To provide innovative, effective, and sustainable organic snail shell supplements that enhance animal well-being.",
+            },
+            {
+              title: "Our Vision",
+              content:
+                "To revolutionize animal nutrition with eco-friendly solutions that impact industries globally.",
+            },
+          ].map((card, index) => (
+            <div
+              key={index}
+              className="card bg-[#FFFFFF] shadow-lg border border-[#6B8E23] rounded-xl p-8 max-w-xs w-full"
+            >
+              <h3 className="text-2xl text-[#6B8E23] font-semibold">
+                {card.title}
+              </h3>
+              <p className="mt-4 text-lg">{card.content}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section className="py-16 bg-[#F9FFF9] px-4 sm:px-8" id="products">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#6B8E23]">
+            Our Products
+          </h2>
+          <p className="py-4 text-lg sm:text-xl">
+            Premium organic snail shell supplements tailored for the poultry
+            industry.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {[snailProduct1, snailProduct2, snailProduct3].map(
+            (product, index) => (
+              <div
+                key={index}
+                className="card bg-[#FFFFFF] shadow-lg border border-[#6B8E23] rounded-xl hover:scale-105 transition-all"
+              >
+                <figure>
+                  <img
+                    src={product}
+                    alt={`Product ${index + 1}`}
+                    className="rounded-t-lg w-full h-56 sm:h-64 object-cover"
+                  />
+                </figure>
+                <div className="card-body text-center p-8">
+                  <h3 className="text-xl text-[#6B8E23] font-semibold">
+                    Snail Shell Product {index + 1}
+                  </h3>
+                  <p className="mt-4 text-lg">
+                    Eco-friendly and sustainable solutions for animal nutrition.
+                  </p>
+                </div>
+              </div>
+            )
+          )}
+        </div>
+      </section>
+
+      {/* Vision Section */}
+      <section className="py-16 bg-[#E8FFE8] px-4 sm:px-8" id="vision">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#6B8E23]">
+            Our Core Values
+          </h2>
+          <p className="py-4 text-lg sm:text-xl">
+            We prioritize integrity, innovation, integration, and customer focus
+            to drive growth and positive impact.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 bg-[#F4F9F4] px-4 sm:px-8" id="contact">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#6B8E23]">
+            Contact Us
+          </h2>
+          <p className="py-4 text-lg sm:text-xl">
+            We'd love to hear from you! Reach out for collaborations or
+            inquiries.
+          </p>
+        </div>
+        <div className="flex justify-center">
+          <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8">
+            <form>
+              {/* Form Inputs */}
+
+              <button
+                type="button" // Prevent default form submission behavior
+                onClick={() => {
+                  // Open WhatsApp link with the predefined message
+                  const message = "Hello, I would like more information.";
+                  const phoneNumber = "+233540484052";
+                  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+                    message
+                  )}`;
+                  window.open(whatsappLink, "_blank"); // Open WhatsApp in a new tab
+                }}
+                className="w-full py-3 px-6 text-lg font-semibold text-white bg-gradient-to-r from-[#6B8E23] to-[#8FBC8F] rounded-lg hover:shadow-xl hover:scale-105 transition-all"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#6B8E23] text-white py-6">
+        <div className="text-center">
+          <p>© 2024 Jeffery Snail Hub. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default HomePage;
