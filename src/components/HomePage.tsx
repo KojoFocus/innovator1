@@ -1,17 +1,9 @@
 import { useState } from "react";
-import {
-  FaBars,
-  FaTimes,
-  // FaFacebook,
-  // FaTwitter,
-  // FaInstagram,
-  // FaEnvelope,
-  // FaPhone,
-} from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-scroll"; // Import Link from react-scroll
 import snailProduct1 from "../assets/SnailProduct1.webp";
 import snailProduct2 from "../assets/SnailProduct2.png";
 import snailProduct3 from "../assets/SnailProduct3.webp";
-import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -23,58 +15,66 @@ const HomePage = () => {
       {/* Navbar */}
       <nav className="bg-[#FFFFFF] w-full py-4 fixed top-0 z-50 shadow-xl">
         <div className="flex justify-between items-center px-4 md:px-8">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="flex items-center space-x-2 text-[#6B8E23] text-2xl font-extrabold"
           >
             <span>Jeffery Snail Hub</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {["About", "Products", "Vision", "Contact"].map((section) => (
-              <a
+            {["About", "Products", "Contact"].map((section) => (
+              <Link
                 key={section}
-                href={`#${section.toLowerCase()}`}
+                to={section.toLowerCase()} // Updated to match section ID for smooth scroll
+                spy={true} // Smooth scroll feature
+                smooth={true}
+                offset={-70} // Adjust for navbar height
+                duration={500}
                 className="text-[#6B8E23] text-lg hover:text-[#90EE90] transition-all"
               >
                 {section}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* Mobile Menu */}
           <button onClick={toggleMenu} className="md:hidden text-[#6B8E23]">
-            {isMenuVisible ? <FaTimes /> : <FaBars />}
+            {isMenuVisible ? <FaTimes size={30} /> : <FaBars size={30} />}
           </button>
         </div>
 
         {isMenuVisible && (
           <div className="md:hidden bg-[#FFFFFF] shadow-xl py-4">
-            {["About", "Products", "Vision", "Contact"].map((section) => (
-              <a
+            {["About", "Products", "Contact"].map((section) => (
+              <Link
                 key={section}
-                href={`#${section.toLowerCase()}`}
+                to={section.toLowerCase()} // Updated to match section ID for smooth scroll
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
                 className="block px-4 py-2 text-[#6B8E23] hover:bg-[#90EE90] transition-all"
               >
                 {section}
-              </a>
+              </Link>
             ))}
           </div>
         )}
       </nav>
 
       {/* Hero Section */}
-      <section className="hero min-h-screen bg-gradient-to-b from-[#6B8E23] to-[#556B2F] text-white flex items-center px-4 sm:px-12">
-        <div className="text-center w-full">
-          <h1 className="text-4xl sm:text-5xl font-bold">
+      <section className="hero min-h-screen bg-gradient-to-b from-[#6B8E23] to-[#556B2F] text-white flex items-center justify-center px-4 sm:px-12">
+        <div className="text-center max-w-4xl">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-[#F4F9F4] leading-tight">
             Revolutionizing Animal Nutrition
           </h1>
-          <p className="py-6 text-lg sm:text-xl">
+          <p className="text-lg sm:text-xl leading-relaxed mb-6">
             Eco-friendly organic snail shell supplements for optimal animal
             health and performance.
           </p>
-          <Link to="/learn-more">
+          <Link to="about" spy={true} smooth={true} offset={-70} duration={500}>
             <button className="px-6 sm:px-8 py-3 sm:py-4 text-lg sm:text-xl font-semibold text-white bg-[#90EE90] rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all">
               Learn More
             </button>
@@ -186,17 +186,15 @@ const HomePage = () => {
           <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8">
             <form>
               {/* Form Inputs */}
-
               <button
-                type="button" // Prevent default form submission behavior
+                type="button"
                 onClick={() => {
-                  // Open WhatsApp link with the predefined message
                   const message = "Hello, I would like more information.";
                   const phoneNumber = "+233540484052";
                   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
                     message
                   )}`;
-                  window.open(whatsappLink, "_blank"); // Open WhatsApp in a new tab
+                  window.open(whatsappLink, "_blank");
                 }}
                 className="w-full py-3 px-6 text-lg font-semibold text-white bg-gradient-to-r from-[#6B8E23] to-[#8FBC8F] rounded-lg hover:shadow-xl hover:scale-105 transition-all"
               >
