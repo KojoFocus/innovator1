@@ -17,7 +17,7 @@ const HomePage = () => {
         <div className="flex justify-between items-center px-4 md:px-8">
           <Link
             to="/"
-            className="flex items-center space-x-2 text-[#6B8E23] text-2xl font-extrabold"
+            className="flex items-center space-x-2 text-[#1A501E] text-2xl font-extrabold"
           >
             <span>Jeffery Snail Hub</span>
           </Link>
@@ -32,7 +32,7 @@ const HomePage = () => {
                 smooth={true}
                 offset={-70} // Adjust for navbar height
                 duration={500}
-                className="text-[#6B8E23] text-lg hover:text-[#90EE90] transition-all"
+                className="text-[#1A501E] text-lg hover:text-[#90EE90] transition-all"
               >
                 {section}
               </Link>
@@ -40,7 +40,7 @@ const HomePage = () => {
           </div>
 
           {/* Mobile Menu */}
-          <button onClick={toggleMenu} className="md:hidden text-[#6B8E23]">
+          <button onClick={toggleMenu} className="md:hidden text-[#1A501E]">
             {isMenuVisible ? <FaTimes size={30} /> : <FaBars size={30} />}
           </button>
         </div>
@@ -55,7 +55,7 @@ const HomePage = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="block px-4 py-2 text-[#6B8E23] hover:bg-[#90EE90] transition-all"
+                className="block px-4 py-2 text-[#1A501E] hover:bg-[#90EE90] transition-all"
               >
                 {section}
               </Link>
@@ -65,7 +65,7 @@ const HomePage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="hero min-h-screen bg-gradient-to-b from-[#6B8E23] to-[#556B2F] text-white flex items-center justify-center px-4 sm:px-12">
+      <section className="hero min-h-screen bg-[#1A501E] text-white flex items-center justify-center px-4 sm:px-12">
         <div className="text-center max-w-4xl">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-[#F4F9F4] leading-tight">
             Revolutionizing Animal Nutrition
@@ -85,7 +85,7 @@ const HomePage = () => {
       {/* About Section */}
       <section className="py-16 bg-[#F0FFF0] px-4 sm:px-8" id="about">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#6B8E23]">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1A501E]">
             Who We Are
           </h2>
           <p className="py-4 text-lg sm:text-xl">
@@ -108,9 +108,9 @@ const HomePage = () => {
           ].map((card, index) => (
             <div
               key={index}
-              className="card bg-[#FFFFFF] shadow-lg border border-[#6B8E23] rounded-xl p-8 max-w-xs w-full"
+              className="card bg-[#FFFFFF] shadow-lg border border-[#1A501E] rounded-xl p-8 max-w-xs w-full"
             >
-              <h3 className="text-2xl text-[#6B8E23] font-semibold">
+              <h3 className="text-2xl text-[#1A501E] font-semibold">
                 {card.title}
               </h3>
               <p className="mt-4 text-lg">{card.content}</p>
@@ -122,7 +122,7 @@ const HomePage = () => {
       {/* Products Section */}
       <section className="py-16 bg-[#F9FFF9] px-4 sm:px-8" id="products">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#6B8E23]">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1A501E]">
             Our Products
           </h2>
           <p className="py-4 text-lg sm:text-xl">
@@ -135,7 +135,7 @@ const HomePage = () => {
             (product, index) => (
               <div
                 key={index}
-                className="card bg-[#FFFFFF] shadow-lg border border-[#6B8E23] rounded-xl hover:scale-105 transition-all"
+                className="card bg-[#FFFFFF] shadow-lg border border-[#1A501E] rounded-xl hover:scale-105 transition-all"
               >
                 <figure>
                   <img
@@ -145,7 +145,7 @@ const HomePage = () => {
                   />
                 </figure>
                 <div className="card-body text-center p-8">
-                  <h3 className="text-xl text-[#6B8E23] font-semibold">
+                  <h3 className="text-xl text-[#1A501E] font-semibold">
                     Snail Shell Product {index + 1}
                   </h3>
                   <p className="mt-4 text-lg">
@@ -161,7 +161,7 @@ const HomePage = () => {
       {/* Vision Section */}
       <section className="py-16 bg-[#E8FFE8] px-4 sm:px-8" id="vision">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#6B8E23]">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1A501E]">
             Our Core Values
           </h2>
           <p className="py-4 text-lg sm:text-xl">
@@ -174,7 +174,7 @@ const HomePage = () => {
       {/* Contact Section */}
       <section className="py-16 bg-[#F4F9F4] px-4 sm:px-8" id="contact">
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#6B8E23]">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#1A501E]">
             Contact Us
           </h2>
           <p className="py-4 text-lg sm:text-xl">
@@ -196,7 +196,7 @@ const HomePage = () => {
                   )}`;
                   window.open(whatsappLink, "_blank");
                 }}
-                className="w-full py-3 px-6 text-lg font-semibold text-white bg-gradient-to-r from-[#6B8E23] to-[#8FBC8F] rounded-lg hover:shadow-xl hover:scale-105 transition-all"
+                className="w-full py-3 px-6 text-lg font-semibold text-white bg-gradient-to-r from-[#1A501E] to-[#8FBC8F] rounded-lg hover:shadow-xl hover:scale-105 transition-all"
               >
                 Send Message
               </button>
@@ -206,7 +206,7 @@ const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#6B8E23] text-white py-6">
+      <footer className="bg-[#1A501E] text-white py-6">
         <div className="text-center">
           <p>© 2024 Jeffery Snail Hub. All Rights Reserved.</p>
         </div>
