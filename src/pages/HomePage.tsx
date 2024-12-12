@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaFacebook, FaTimes, FaTwitter } from "react-icons/fa";
 import { Link } from "react-scroll"; // Import Link from react-scroll
 import snailProduct1 from "../assets/SnailProduct1.webp";
 import snailProduct2 from "../assets/SnailProduct2.png";
 import snailProduct3 from "../assets/SnailProduct3.webp";
+import { FaInstagram } from "react-icons/fa6";
 
 const HomePage = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -207,9 +208,23 @@ const HomePage = () => {
 
       {/* Footer */}
       <footer className="bg-[#1A501E] text-white py-6">
-        <div className="text-center">
+        {/* <div className="text-center">
           <p>© 2024 Jeffery Snail Hub. All Rights Reserved.</p>
-        </div>
+        </div> */}
+        <div className="text-center">
+        <p>© 2024 Jeffery Snail Hub. All Rights Reserved.</p>
+          <div className="flex justify-center space-x-8 pt-4">
+            <a href="#" className="text-white hover:text-[#90EE90]">
+              <FaFacebook size={30} />
+            </a>
+            <a href="#" className="text-white hover:text-[#90EE90]">
+              <FaTwitter size={30} />
+            </a>
+            <a href="#" className="text-white hover:text-[#90EE90]">
+              <FaInstagram size={30} />
+            </a>
+          </div>
+          </div>
       </footer>
     </div>
   );
