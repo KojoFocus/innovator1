@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { FaBars, FaFacebook, FaTimes, FaTwitter } from "react-icons/fa";
 import { Link } from "react-scroll"; // Import Link from react-scroll
-import snailProduct1 from "../assets/SnailProduct1.webp";
+import snailProduct1 from "../assets/SnailProduct1.png";
 import snailProduct2 from "../assets/SnailProduct2.png";
-import snailProduct3 from "../assets/SnailProduct3.webp";
+import snailProduct3 from "../assets/SnailProduct3.png";
 import { FaInstagram } from "react-icons/fa6";
 
 const HomePage = () => {
@@ -122,42 +122,45 @@ const HomePage = () => {
 
       {/* Products Section */}
       <section className="py-16 bg-[#F9FFF9] px-4 sm:px-8" id="products">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1A501E]">
-            Our Products
-          </h2>
-          <p className="py-4 text-lg sm:text-xl">
-            Premium organic snail shell supplements tailored for the poultry
-            industry.
+  <div className="text-center mb-12">
+    <h2 className="text-3xl sm:text-4xl font-bold text-[#1A501E]">
+      Our Products
+    </h2>
+    <p className="py-4 text-lg sm:text-xl">
+      Premium organic snail shell supplements tailored for the poultry industry.
+    </p>
+  </div>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    {[snailProduct1, snailProduct2, snailProduct3].map((product, index) => (
+      <div
+        key={index}
+        className="card bg-[#FFFFFF] shadow-lg border border-[#1A501E] rounded-xl hover:scale-105 transition-all"
+      >
+        <figure className="bg-transparent pt-4">
+          <img
+            src={product}
+            alt={`Product ${index + 1}`}
+            className="rounded-lg w-full h-64 sm:h-72 object-contain"
+          />
+        </figure>
+        <div className="card-body text-center p-8">
+          <h3 className="text-xl text-[#1A501E] font-semibold">
+            Snail Shell Product {index + 1}
+          </h3>
+          <p className="mt-4 text-lg">
+            {index === 0 &&
+              "Rich in calcium for healthier eggshell production in poultry."}
+            {index === 1 &&
+              "An eco-friendly alternative for boosting animal growth naturally."}
+            {index === 2 &&
+              "A sustainable choice for enhanced poultry nutrition and performance."}
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {[snailProduct1, snailProduct2, snailProduct3].map(
-            (product, index) => (
-              <div
-                key={index}
-                className="card bg-[#FFFFFF] shadow-lg border border-[#1A501E] rounded-xl hover:scale-105 transition-all"
-              >
-                <figure>
-                  <img
-                    src={product}
-                    alt={`Product ${index + 1}`}
-                    className="rounded-t-lg w-full h-56 sm:h-64 object-cover"
-                  />
-                </figure>
-                <div className="card-body text-center p-8">
-                  <h3 className="text-xl text-[#1A501E] font-semibold">
-                    Snail Shell Product {index + 1}
-                  </h3>
-                  <p className="mt-4 text-lg">
-                    Eco-friendly and sustainable solutions for animal nutrition.
-                  </p>
-                </div>
-              </div>
-            )
-          )}
-        </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* Vision Section */}
       <section className="py-16 bg-[#E8FFE8] px-4 sm:px-8" id="vision">

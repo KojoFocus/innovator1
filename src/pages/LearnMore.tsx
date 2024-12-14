@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa"; 
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const LearnMore = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -60,16 +60,33 @@ const LearnMore = () => {
             Learn More About Us
           </h1>
           <p className="text-lg sm:text-xl leading-relaxed mb-6">
-            At Jeffery Snail Hub, we are dedicated to pioneering sustainable solutions that revolutionize animal nutrition. With a strong commitment to eco-friendly practices, we strive to enhance the health, well-being, and performance of animals across the globe.
+            At Jeffery Snail Hub, we are dedicated to pioneering sustainable
+            solutions that revolutionize animal nutrition. With a strong
+            commitment to eco-friendly practices, we strive to enhance the
+            health, well-being, and performance of animals across the globe.
           </p>
           <p className="text-lg sm:text-xl leading-relaxed mb-6">
-            Our journey began with a vision to address the growing demand for organic, environmentally-conscious supplements in the animal industry. By utilizing the power of organic snail shells, we provide high-quality, effective products that support both animal health and the planet's well-being.
+            Our journey began with a vision to address the growing demand for
+            organic, environmentally-conscious supplements in the animal
+            industry. By utilizing the power of organic snail shells, we provide
+            high-quality, effective products that support both animal health and
+            the planet's well-being.
           </p>
           <p className="text-lg sm:text-xl leading-relaxed mb-6">
-            Our values are rooted in integrity, innovation, and sustainability. We believe in creating products that not only meet the needs of the industry today but also contribute to a greener, more sustainable future for tomorrow. Every step we take is guided by these principles, ensuring that our solutions benefit both animals and the environment.
+            Our values are rooted in integrity, innovation, and sustainability.
+            We believe in creating products that not only meet the needs of the
+            industry today but also contribute to a greener, more sustainable
+            future for tomorrow. Every step we take is guided by these
+            principles, ensuring that our solutions benefit both animals and the
+            environment.
           </p>
           <p className="text-lg sm:text-xl leading-relaxed mb-6">
-            As we continue to grow, we aim to expand our impact, reaching more farmers, industries, and communities worldwide. With our eco-friendly approach, we aim to leave a lasting legacy of positive change in the animal nutrition space. Join us in making the world a healthier and more sustainable place for animals, one snail shell at a time.
+            As we continue to grow, we aim to expand our impact, reaching more
+            farmers, industries, and communities worldwide. With our
+            eco-friendly approach, we aim to leave a lasting legacy of positive
+            change in the animal nutrition space. Join us in making the world a
+            healthier and more sustainable place for animals, one snail shell at
+            a time.
           </p>
         </div>
       </section>
@@ -77,7 +94,9 @@ const LearnMore = () => {
       {/* Footer */}
       <footer className="bg-[#6B8E23] text-white py-6 ">
         <div className="text-center">
-          <p className="text-lg sm:text-xl">© 2024 Jeffery Snail Hub. All Rights Reserved.</p>
+          <p className="text-lg sm:text-xl">
+            © 2024 Jeffery Snail Hub. All Rights Reserved.
+          </p>
         </div>
       </footer>
     </>
