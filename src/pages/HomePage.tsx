@@ -122,45 +122,47 @@ const HomePage = () => {
 
       {/* Products Section */}
       <section className="py-16 bg-[#F9FFF9] px-4 sm:px-8" id="products">
-  <div className="text-center mb-12">
-    <h2 className="text-3xl sm:text-4xl font-bold text-[#1A501E]">
-      Our Products
-    </h2>
-    <p className="py-4 text-lg sm:text-xl">
-      Premium organic snail shell supplements tailored for the poultry industry.
-    </p>
-  </div>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-    {[snailProduct1, snailProduct2, snailProduct3].map((product, index) => (
-      <div
-        key={index}
-        className="card bg-[#FFFFFF] shadow-lg border border-[#1A501E] rounded-xl hover:scale-105 transition-all"
-      >
-        <figure className="bg-transparent pt-4">
-          <img
-            src={product}
-            alt={`Product ${index + 1}`}
-            className="rounded-lg w-full h-64 sm:h-72 object-contain"
-          />
-        </figure>
-        <div className="card-body text-center p-8">
-          <h3 className="text-xl text-[#1A501E] font-semibold">
-            Snail Shell Product {index + 1}
-          </h3>
-          <p className="mt-4 text-lg">
-            {index === 0 &&
-              "Rich in calcium for healthier eggshell production in poultry."}
-            {index === 1 &&
-              "An eco-friendly alternative for boosting animal growth naturally."}
-            {index === 2 &&
-              "A sustainable choice for enhanced poultry nutrition and performance."}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1A501E]">
+            Our Products
+          </h2>
+          <p className="py-4 text-lg sm:text-xl">
+            Premium organic snail shell supplements tailored for the poultry
+            industry.
           </p>
         </div>
-      </div>
-    ))}
-  </div>
-</section>
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {[snailProduct1, snailProduct2, snailProduct3].map(
+            (product, index) => (
+              <div
+                key={index}
+                className="card bg-[#FFFFFF] shadow-lg border border-[#1A501E] rounded-xl hover:scale-105 transition-all"
+              >
+                <figure className="bg-transparent pt-4">
+                  <img
+                    src={product}
+                    alt={`Product ${index + 1}`}
+                    className="rounded-lg w-full h-64 sm:h-72 object-contain"
+                  />
+                </figure>
+                <div className="card-body text-center p-8">
+                  <h3 className="text-xl text-[#1A501E] font-semibold">
+                    Snail Shell Product {index + 1}
+                  </h3>
+                  <p className="mt-4 text-lg">
+                    {index === 0 &&
+                      "Rich in calcium for healthier eggshell production in poultry."}
+                    {index === 1 &&
+                      "An eco-friendly alternative for boosting animal growth naturally."}
+                    {index === 2 &&
+                      "A sustainable choice for enhanced poultry nutrition and performance."}
+                  </p>
+                </div>
+              </div>
+            )
+          )}
+        </div>
+      </section>
 
       {/* Vision Section */}
       <section className="py-16 bg-[#E8FFE8] px-4 sm:px-8" id="vision">
@@ -194,7 +196,7 @@ const HomePage = () => {
                 type="button"
                 onClick={() => {
                   const message = "Hello, I would like more information.";
-                  const phoneNumber = "+233540484052";
+                  const phoneNumber = "+233245838483";
                   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
                     message
                   )}`;
@@ -215,7 +217,7 @@ const HomePage = () => {
           <p>© 2024 Jeffery Snail Hub. All Rights Reserved.</p>
         </div> */}
         <div className="text-center">
-        <p>© 2024 Jeffery Snail Hub. All Rights Reserved.</p>
+          <p>© 2024 Jeffery Snail Hub. All Rights Reserved.</p>
           <div className="flex justify-center space-x-8 pt-4">
             <a href="#" className="text-white hover:text-[#90EE90]">
               <FaFacebook size={30} />
@@ -227,7 +229,7 @@ const HomePage = () => {
               <FaInstagram size={30} />
             </a>
           </div>
-          </div>
+        </div>
       </footer>
     </div>
   );
